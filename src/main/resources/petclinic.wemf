@@ -1,0 +1,75 @@
+system PetclinicWemf;
+
+package tech.gearsofcode.petclinic{
+
+	@Entity
+	@SearchFilter
+	class Owner {
+		@Id
+		id: EInt;
+		
+		@SearchFilter
+		firstName: EString;
+		@SearchFilter
+		lastName: EString;
+		address: EString;
+		city: EString;
+		telephone: EString;
+		pets: Pet [0..*];
+	}
+
+	@Entity
+	@SearchFilter
+	class Veterinarian {
+		@Id
+		id: EInt;
+		@SearchFilter
+		firstName: EString;
+		@SearchFilter
+		lastName: EString;
+		specialties: Specialty [0..*];
+	}
+	
+	@Entity
+	@SearchFilter
+	class Pet {
+		@Id
+		id: EInt;
+		@SearchFilter
+		name: EString;
+		birthDate: EDate;
+		type: PetType;
+		visits: Visit [0..*];
+	
+	}
+	
+	@Entity
+	@SearchFilter
+	class PetType{
+		@Id
+		id: EInt;
+		@SearchFilter
+		name: EString;
+	}
+	
+	@Entity
+	@SearchFilter
+	class Specialty {
+		
+		@Id
+		id: EInt;
+		@SearchFilter
+		name: EString;
+	}
+	
+	@Entity
+	@SearchFilter
+	class Visit {
+		@Id
+		id: EInt;
+		date: EDate;
+		@SearchFilter
+		description: EString;
+	}
+
+}
