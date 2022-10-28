@@ -2,6 +2,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import {Specialty} from '../Specialty';
 
 @Component({
   selector: 'app-Specialty-list',
@@ -10,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpecialtyListComponent implements OnInit {
 
+  specialtyList = [] as Specialty[];
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  
+  searchSpecialty(){
+  	alert('Specialty works!');
   }
 
 }

@@ -2,6 +2,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import {PetType} from '../PetType';
 
 @Component({
   selector: 'app-PetType-list',
@@ -10,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetTypeListComponent implements OnInit {
 
+  petTypeList = [] as PetType[];
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  
+  searchPetType(){
+  	alert('PetType works!');
   }
 
 }

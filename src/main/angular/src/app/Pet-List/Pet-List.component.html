@@ -1,15 +1,16 @@
 
 
 
-<div className="row">
-	<h1>Search for Pet</h1>
+<h1>Search for Pet</h1>
+<div class="row">
 	
 	
 	
-	<div className="col-md-3">
-		<div className="form-group">
+	
+	<div class="col-md-3">
+		<div class="form-group">
 			<label htmlFor="name">Name</label>
-			<input className="form-control" id="name" name="name" type="text" placeholder="" />
+			<input class="form-control" id="name" name="name" type="text" placeholder="" />
 		</div>
 
 	</div>
@@ -20,5 +21,61 @@
     
     
     
-    <button>search</button>
+    
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<button (click)="searchPet()">search</button>
+	</div>
+</div>	
+
+<div class="row">
+	<div class="col-md-12">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th></th>
+				
+				<th>
+					Name
+				</th>
+				
+				<th>
+					Birth date
+				</th>
+				
+				
+				<th>
+					Type
+				</th>
+				
+				<th>
+					Actions
+				</th>
+			</tr>
+		</thead>
+		<tbody *ngFor="let pet of petList">
+			<tr>
+				<th></th>
+				
+				<th>
+					{{pet.name}}
+				</th>
+				
+				<th>
+					{{pet.birthDate}}
+				</th>
+				
+				
+				<th>
+					{{pet.type}}
+				</th>
+				
+				<th>
+					Actions
+				</th>
+			</tr>
+		</tbody>
+	</table>
+	</div>
 </div>

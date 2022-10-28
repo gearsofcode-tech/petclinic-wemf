@@ -2,6 +2,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import {Owner} from '../Owner';
 
 @Component({
   selector: 'app-Owner-list',
@@ -10,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OwnerListComponent implements OnInit {
 
+  ownerList = [] as Owner[];
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  
+  searchOwner(){
+  	alert('Owner works!');
   }
 
 }

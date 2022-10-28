@@ -14,6 +14,7 @@ import { PetListComponent } from './Pet-List/Pet-List.component';
 import { PetTypeListComponent } from './PetType-List/PetType-List.component';
 import { SpecialtyListComponent } from './Specialty-List/Specialty-List.component';
 import { VisitListComponent } from './Visit-List/Visit-List.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { VisitListComponent } from './Visit-List/Visit-List.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

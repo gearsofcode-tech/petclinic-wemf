@@ -2,6 +2,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import {Veterinarian} from '../Veterinarian';
 
 @Component({
   selector: 'app-Veterinarian-list',
@@ -10,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VeterinarianListComponent implements OnInit {
 
+  veterinarianList = [] as Veterinarian[];
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  
+  searchVeterinarian(){
+  	alert('Veterinarian works!');
   }
 
 }
