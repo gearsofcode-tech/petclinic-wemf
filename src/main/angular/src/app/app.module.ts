@@ -14,25 +14,28 @@ import { PetListComponent } from './Pet-List/Pet-List.component';
 import { PetTypeListComponent } from './PetType-List/PetType-List.component';
 import { SpecialtyListComponent } from './Specialty-List/Specialty-List.component';
 import { VisitListComponent } from './Visit-List/Visit-List.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
     OwnerListComponent,
     VeterinarianListComponent,
     PetListComponent,
     PetTypeListComponent,
     SpecialtyListComponent,
     VisitListComponent
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

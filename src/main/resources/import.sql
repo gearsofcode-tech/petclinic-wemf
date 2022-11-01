@@ -1,0 +1,2 @@
+INSERT INTO Owner (id, firstName, lastName, address, city, telephone) VALUES (1, 'Charlie', 'Silver', '5th avenue', 'NY', '3555-1288');
+INSERT INTO Owner (id, firstName, lastName, address, city, telephone) VALUES (1, 'Steven', 'Brooks', '7th avenue', 'NY', '3666-1288');

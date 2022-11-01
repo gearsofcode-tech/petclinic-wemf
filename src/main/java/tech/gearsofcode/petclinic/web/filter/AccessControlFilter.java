@@ -23,7 +23,7 @@ public class AccessControlFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse sResponse, FilterChain chain) throws IOException, ServletException {
 		HttpServletResponse response = (HttpServletResponse) sResponse;
-		response.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+		response.addHeader("Access-Control-Allow-Origin", "http://localhost:4200");
 		response.addHeader("Access-Control-Allow-Headers", "Content-Type");
 		chain.doFilter(request, response);
 	}

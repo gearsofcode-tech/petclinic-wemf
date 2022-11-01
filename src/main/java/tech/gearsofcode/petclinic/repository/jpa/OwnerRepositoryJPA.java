@@ -56,7 +56,9 @@ public class OwnerRepositoryJPA implements OwnerRepository {
 		Root<Owner> root = cq.from(Owner.class);
 		cq.select(root);
 		List<Predicate> predicates = getPredicates(cb, root, ownerCriteria);
-		cq.where(predicates.toArray(new Predicate[predicates.size()]));
+		if (!predicates.isEmpty()) {
+			cq.where(predicates.toArray(new Predicate[predicates.size()]));
+		}
 		TypedQuery<Owner> query = em.createQuery(cq);
 		return query.getResultList();
 	}
@@ -80,12 +82,12 @@ public class OwnerRepositoryJPA implements OwnerRepository {
 	private List<Predicate> getPredicates (CriteriaBuilder cb, Root<Owner> root, OwnerCriteria filter){
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		List<Predicate> lstPredicate = new LinkedList<Predicate>();
-		if (filter.getFirstName() != null){
+		if (filter.getFirstName() != null && !filter.getFirstName().isEmpty()){
 				if (!filter.getFirstName().isEmpty()){
 					lstPredicate.add(cb.like(root.get("firstName"), "%"+filter.getFirstName()+"%"));
 				}
 		}
-		if (filter.getLastName() != null){
+		if (filter.getLastName() != null && !filter.getLastName().isEmpty()){
 				if (!filter.getLastName().isEmpty()){
 					lstPredicate.add(cb.like(root.get("lastName"), "%"+filter.getLastName()+"%"));
 				}

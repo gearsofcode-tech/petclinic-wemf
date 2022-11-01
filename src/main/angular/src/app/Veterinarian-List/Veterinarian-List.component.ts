@@ -2,25 +2,30 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import {Veterinarian} from '../Veterinarian';
+import {VeterinarianService} from '../Veterinarian.service';
 
 @Component({
-  selector: 'app-Veterinarian-list',
-  templateUrl: './Veterinarian-List.component.html',
-  styleUrls: ['./Veterinarian-List.component.css']
+    selector: 'app-Veterinarian-list',
+    templateUrl: './Veterinarian-List.component.html',
+    styleUrls: ['./Veterinarian-List.component.css']
 })
 export class VeterinarianListComponent implements OnInit {
 
-  veterinarianList = [] as Veterinarian[];
+    veterinarianList : Veterinarian[] = this.veterinarianService.getItems();
   
-  constructor() { }
+    constructor(
+        private  veterinarianService: VeterinarianService,
+        private formBuilder: FormBuilder
+    ) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
   
   
-  searchVeterinarian(){
-  	alert('Veterinarian works!');
-  }
+    searchVeterinarian(){
+  	    alert('Veterinarian works!');
+    }
 
 }

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-@Entity
+@Entity(name="OWNER")
 public class Owner implements Serializable{
 	@Id
 	private int id;
