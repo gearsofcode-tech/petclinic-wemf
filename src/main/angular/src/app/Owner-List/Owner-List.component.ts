@@ -16,11 +16,19 @@ export class OwnerListComponent implements OnInit {
     ownerList : Owner[] = [];
     
     searchForm = this.formBuilder.group({
+        
+		
+		
 			firstName: '',
+		
+		
 			lastName: '',
-            page: 1,
-            pageSize: 20
-
+		
+		
+		
+		
+		page: 1,
+        pageSize: 20
     });
   
     constructor(
@@ -33,9 +41,9 @@ export class OwnerListComponent implements OnInit {
   
   
     onSearchSubmit(){
-        this.ownerService.getItems(this.searchForm)
-        .subscribe(owners => this.ownerList = owners.list);
-  	    alert('Owner works!' + this.searchForm.value.firstName);
+    	this.ownerService.getItems(this.searchForm)
+        .subscribe(result => this.ownerList = result.list);
+  	    alert('Owner works!');
     }
 
 }

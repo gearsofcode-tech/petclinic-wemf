@@ -2,7 +2,7 @@
 
 
 <h1>Search for PetType</h1>
-<form [formGroup]="searchForm"  (ngSubmit)="onSearchSubmit()">
+<form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
 <div class="row">
 	
 	
@@ -11,7 +11,7 @@
 	<div class="col-md-3">
 		<div class="form-group">
 			<label htmlFor="name">Name</label>
-			<input class="form-control" id="name" name="name" type="text" placeholder=""  formControlName="name" />
+			<input class="form-control" id="name" name="name" formControlName="name" type="text" placeholder="" />
 		</div>
 
 	</div>
@@ -47,14 +47,14 @@
 		<tbody *ngFor="let petType of petTypeList">
 			<tr>
 				
-				<th>
+				<td>
 					{{petType.name}}
-				</th>
+				</td>
 				
 				
-				<th>
+				<td>
 					Actions
-				</th>
+				</td>
 			</tr>
 		</tbody>
 	</table>

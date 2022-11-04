@@ -2,6 +2,7 @@ package tech.gearsofcode.petclinic.web.dto;
 import java.util.List;
 public class PetDTO {
 	private Integer id;
+	private String name;
 	private String birthDate;
 	private PetTypeDTO type;
 	private List<VisitDTO> visits;
@@ -13,6 +14,18 @@ public class PetDTO {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 

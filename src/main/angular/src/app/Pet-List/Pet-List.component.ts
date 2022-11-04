@@ -13,7 +13,18 @@ import {PetService} from '../Pet.service';
 })
 export class PetListComponent implements OnInit {
 
-    petList : Pet[] = this.petService.getItems();
+    petList : Pet[] = [];
+    
+    searchForm = this.formBuilder.group({
+        
+		
+		
+			name: '',
+		
+		
+		page: 1,
+        pageSize: 20
+    });
   
     constructor(
         private  petService: PetService,
@@ -24,7 +35,9 @@ export class PetListComponent implements OnInit {
     }
   
   
-    searchPet(){
+    onSearchSubmit(){
+    	this.petService.getItems(this.searchForm)
+        .subscribe(result => this.petList = result.list);
   	    alert('Pet works!');
     }
 

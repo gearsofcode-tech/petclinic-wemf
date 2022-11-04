@@ -76,6 +76,7 @@ public class PetFacade {
 	public PetDTO toDTO(Pet pet){
 		PetDTO petDTO = new PetDTO(); 	
 		petDTO.setId(pet.getId());
+		petDTO.setName(pet.getName());
 		if (pet.getBirthDate()!=null){
 			petDTO.setBirthDate(sdf.format(pet.getBirthDate()));
 		}
@@ -92,6 +93,7 @@ public class PetFacade {
 	public Pet toModel(PetDTO petDTO){
 		Pet pet = new Pet(); 
 		pet.setId(petDTO.getId());
+		pet.setName(petDTO.getName());
 		if (petDTO.getBirthDate()!=null){
 			try{
 			pet.setBirthDate(sdf.parse(petDTO.getBirthDate()));
@@ -111,6 +113,7 @@ public class PetFacade {
 
 	public void updateModel(Pet pet, PetDTO dto){
 		pet.setId(dto.getId());
+		pet.setName(dto.getName());
 		if (pet.getBirthDate()!=null){
 			try{
 			pet.setBirthDate(sdf.parse(dto.getBirthDate()));
@@ -120,6 +123,5 @@ public class PetFacade {
 			}
 		}
 		PetTypeDTO typeDTO = dto.getType(); 
-		if (typeDTO!=null) pet.setType(petTypeFacade.findById(typeDTO.getId()));
 	}
 }
