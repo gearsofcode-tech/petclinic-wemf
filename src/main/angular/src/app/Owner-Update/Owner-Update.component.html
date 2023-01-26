@@ -1,0 +1,48 @@
+
+
+
+<form [formGroup]="updateForm" (ngSubmit)="onUpdateSubmit()">
+	<input type="hidden" formControlName="id" ngModel="owner.id"/><input type="hidden" formControlName="id" ngModel="owner.id"/>
+	<h1>New Owner</h1>
+	<div class="row">
+			
+			
+				<div class="col-mb-3">
+					<label for="firstName" class="form-label">First name</label>
+					<input type="text" class="form-control" formControlName="firstName" ngModel="firstName"/>
+				</div>
+			
+				<div class="col-mb-3">
+					<label for="lastName" class="form-label">Last name</label>
+					<input type="text" class="form-control" formControlName="lastName" ngModel="lastName"/>
+				</div>
+			
+				<div class="col-mb-3">
+					<label for="address" class="form-label">Address</label>
+					<input type="text" class="form-control" formControlName="address" ngModel="address"/>
+				</div>
+			
+				<div class="col-mb-3">
+					<label for="city" class="form-label">City</label>
+					<input type="text" class="form-control" formControlName="city" ngModel="city"/>
+				</div>
+			
+				<div class="col-mb-3">
+					<label for="telephone" class="form-label">Telephone</label>
+					<input type="text" class="form-control" formControlName="telephone" ngModel="telephone"/>
+				</div>
+			
+			
+				<div class="col-mb-3">
+					<label>Pets</label>
+					<input type="text" class="form-control" formControlName="pets"/>
+				</div>
+			
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<button type="submit">update</button>
+		</div>
+	</div>	
+</form>
+
