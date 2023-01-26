@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { OwnerListComponent } from './Owner-List/Owner-List.component';
+import { OwnerCreateComponent } from './Owner-Create/Owner-Create.component';
 import { VeterinarianListComponent } from './Veterinarian-List/Veterinarian-List.component';
 import { PetListComponent } from './Pet-List/Pet-List.component';
 import { PetTypeListComponent } from './PetType-List/PetType-List.component';
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     OwnerListComponent,
+    OwnerCreateComponent,
     VeterinarianListComponent,
     PetListComponent,
     PetTypeListComponent,

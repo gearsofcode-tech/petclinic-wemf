@@ -1,17 +1,16 @@
 package tech.gearsofcode.petclinic.facade;
+import java.text.SimpleDateFormat;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import tech.gearsofcode.petclinic.domain.Owner;
-import tech.gearsofcode.petclinic.domain.Pet;
-import tech.gearsofcode.petclinic.web.dto.PetDTO;
 import tech.gearsofcode.petclinic.service.OwnerService;
 import tech.gearsofcode.petclinic.web.dto.OwnerCriteria;
 import tech.gearsofcode.petclinic.web.dto.OwnerDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import java.util.List;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
 @Service
 @Transactional
 @Component
@@ -82,8 +81,8 @@ public class OwnerFacade {
 
 
 	public Owner toModel(OwnerDTO ownerDTO){
-		Owner owner = new Owner(); 
-		owner.setId(ownerDTO.getId());
+		Owner owner = new Owner();
+		if (ownerDTO.getId()!=null)owner.setId(ownerDTO.getId());
 		owner.setFirstName(ownerDTO.getFirstName());
 		owner.setLastName(ownerDTO.getLastName());
 		owner.setAddress(ownerDTO.getAddress());

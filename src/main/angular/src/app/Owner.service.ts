@@ -18,6 +18,7 @@ import { PagedResult } from './PagedResult';
 export class OwnerService {
     items: Owner[] = [];
     getUrl = baseUrl() + '/api/v1/owner/find';
+    createUrl = baseUrl() + '/api/v1/owner/insert';
 
 
 	constructor(private http: HttpClient){
@@ -26,5 +27,9 @@ export class OwnerService {
 
 	getItems(searchForm : FormGroup): Observable<PagedResult<Owner>> {
 	    return this.http.post<PagedResult<Owner>>(this.getUrl, searchForm.value);
+	}
+	
+	createNew(createForm : FormGroup): Observable<Owner> {
+	    return this.http.post<Owner>(this.createUrl, createForm.value);
 	}
 }
