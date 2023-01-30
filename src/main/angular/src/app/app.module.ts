@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { OwnerListComponent } from './Owner-List/Owner-List.component';
 import { OwnerCreateComponent } from './Owner-Create/Owner-Create.component';
 import { OwnerUpdateComponent } from './Owner-Update/Owner-Update.component';
+import { OwnerDetailComponent } from './Owner-Detail/Owner-Detail.component';
 import { VeterinarianListComponent } from './Veterinarian-List/Veterinarian-List.component';
 import { PetListComponent } from './Pet-List/Pet-List.component';
 import { PetTypeListComponent } from './PetType-List/PetType-List.component';
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     OwnerListComponent,
     OwnerCreateComponent,
     OwnerUpdateComponent,
+    OwnerDetailComponent,
     VeterinarianListComponent,
     PetListComponent,
     PetTypeListComponent,
